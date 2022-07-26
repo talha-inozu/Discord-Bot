@@ -1,12 +1,10 @@
 
 import discord
-from funcitons import *
 import os
 from discord.ext import commands, tasks
 
 intents = discord.Intents(messages = True, guilds = True , reactions = True, members = True, presences = True, message_content = True)
 Bot = commands.Bot(command_prefix="!bot ", intents = intents)
-game = Game()
 
 @Bot.event
 async def on_ready():
@@ -43,7 +41,7 @@ async def stopSelam(ctx):
 
 @Bot.command(aliases = ["gönder"])
 async def send_message(msg, *args):
-    string_A = " ".join(args) + str(game.roll_dice())
+    string_A = " ".join(args) 
     await msg.send(string_A)
 
 
@@ -170,4 +168,4 @@ async def update_extension(ctx,extension):
     except Exception as e:
         await ctx.send("This extension does not exist or not loaded yet !!")
     
-Bot.run("")
+Bot.run("OTk3NTEzNjc4Nzg0MDQwOTYx.G0EyFz.FWL7IfHnuLBwWpsJvayIKz30LZNmN1pfJ9qVYY")
