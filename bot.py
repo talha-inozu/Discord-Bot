@@ -2,6 +2,7 @@
 import discord
 import os
 from discord.ext import commands, tasks
+from model import *
 
 intents = discord.Intents(messages = True, guilds = True , reactions = True, members = True, presences = True, message_content = True)
 Bot = commands.Bot(command_prefix="!bot ", intents = intents)
