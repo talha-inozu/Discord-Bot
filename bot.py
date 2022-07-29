@@ -79,8 +79,8 @@ async def channel_del(ctx, channel : discord.TextChannel):
     
 @Bot.command()
 @commands.has_role("Executive")
-async def sendDM(ctx, member: discord.Member):
-    await member.send(content="Selam")
+async def sendDM(ctx, member: discord.Member, *, txt):
+    await member.send(content=txt)
     
     
     
