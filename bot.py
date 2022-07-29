@@ -80,7 +80,9 @@ async def channel_del(ctx, channel : discord.TextChannel):
 @Bot.command()
 @commands.has_role("Executive")
 async def sendDM(ctx, member: discord.Member, *, txt):
+    await ctx.channel.purge(limit= 1)
     await member.send(content=txt)
+    
     
     
     
