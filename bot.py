@@ -13,15 +13,15 @@ async def on_ready():
     await Bot.change_presence(activity=discord.Activity(type = discord.ActivityType.listening,name = "!bot"))
     print("Ben hazırım")
 
-@Bot.event
-async def on_message(message):
-    await Bot.process_commands(message)
+# @Bot.event
+# async def on_message(message):
+#     await Bot.process_commands(message)
     
-    if message.channel ==  Bot.guilds[0].text_channels[6] and not message.author.bot and not message.content.startswith("!bot"):
-        textString = message.content
+#     if message.channel ==  Bot.guilds[0].text_channels[6] and not message.author.bot and not message.content.startswith("!bot"):
+#         textString = message.content
         
         
-        await message.channel.send(textString)
+#         await message.channel.send(textString)
         
         
     # if not message.content.startswith("!bot"):

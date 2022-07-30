@@ -3,6 +3,24 @@ import discord
 from discord.ui import Select ,View
 from discord.ext import commands
 
+class CommandSelect():
+    
+    dc_channel = ""
+    text = ""
+    
+    def __init__(self,channel : discord.channel,text):
+        
+        self.commands = {
+            "selamlama1":channel.send("Selam"),
+            "selamlasma":channel.send("İyiyim"),
+            "yaş1":channel.send("Bilmiyorum")
+        }
+        self.text = text
+    
+    def getfunc(self):
+        return self.commands.get(self.text)
+
+
 class StatuSelect:  
     global statutext
     statutext = ""
@@ -51,6 +69,7 @@ class Komutlar(commands.Cog):
         self.activities = {}
         
         
+        
     @commands.command()
     async def merhaba(self,ctx):
         await ctx.send("Merhaba")
@@ -63,6 +82,19 @@ class Komutlar(commands.Cog):
         view = StatuSelect(text,url).myv
 
         await ctx.send("Choose !",view = view)
+
+    
+    # @commands.Cog.listener()
+    # async def on_message(self,message):
+        
+    
+    #     if message.channel ==  self.bot.guilds[0].text_channels[6] and not message.author.bot and not message.content.startswith("!bot"):
+    #         textString = message.content  
+    #         # await message.channel.send(textString)  
+    #         # activity = {"1":message.channel.send(textString)}
+    #         # await activity.get("1")
+    #         command = CommandSelect(message.channel,textString)
+    #         await  command.getfunc()
         
 
         
