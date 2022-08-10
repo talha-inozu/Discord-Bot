@@ -171,4 +171,4 @@ async def update_extension(ctx,extension):
     except Exception as e:
         await ctx.send("This extension does not exist or not loaded yet !!")
     
-Bot.run("OTk3NTEzNjc4Nzg0MDQwOTYx.G0EyFz.FWL7IfHnuLBwWpsJvayIKz30LZNmN1pfJ9qVYY")
+Bot.run("YourID")
